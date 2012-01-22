@@ -19,5 +19,5 @@ no_index:
     - inc
 requires:
   HTTP::Parser2::XS: 0
-  Nginx::Perl: 0
-version: 0.01
+  Nginx::Perl: v1.1.13.1
+version: 0.02
