@@ -8,7 +8,7 @@ use bytes;
 require Exporter;
 our @ISA     = qw(Exporter);
 our @EXPORT  = qw(ngx_http_client ngx_http);
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use Nginx;
 # use Nginx::Verbose;
@@ -172,7 +172,7 @@ sub ngx_http_client ($$$$) {
         if ($headers{'_content_length'}) {
 
             if (length($buf) < $headers{'_content_length'}) {
-                $min = $max = $headers{'_content_length'} - length($buf);
+                $min = $max = $headers{'_content_length'};
                 $read = $read_identity;
                 return NGX_READ;
             } else {
